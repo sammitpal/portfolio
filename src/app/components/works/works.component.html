@@ -1,0 +1,9 @@
+<div class="works">
+  <div class="worksWrapper">
+    <h3>Works</h3>
+    <h1>I like to create something powerful, simple, and clean.</h1>
+    <div class="worksBlock" *ngFor="let project of projects">
+      <app-works-card tags={{project.technologyTags}} title={{project.name}} description={{project.description}}
+        imgURL={{project.image}}></app-works-card>
+    </div>
+  </div>

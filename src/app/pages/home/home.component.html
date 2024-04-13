@@ -1,0 +1,31 @@
+<div class="homePage">
+  <app-navbar class="homeNavbar"></app-navbar>
+  <div class="banner">
+    <div class="bannerWrapper">
+      <div class="bannerLeft">
+        <h1>Sammit Pal</h1>
+        <h2>Full-Stack Web Developer</h2>
+        <p>
+          I am a Full-Stack Web Developer with extensive experience in
+          web development, UI design for business needs.
+        </p>
+        <div class="buttonWrapper">
+          <button class="bannerButton buttonBlack">My Projects <img src="https://img.icons8.com/material-outlined/16/ffffff/right.png"/></button>
+          <button class="bannerButton" (click)="viewResume()">Resume <img src="https://img.icons8.com/material-outlined/16/000000/external-link.png"/></button>
+        </div>
+      </div>
+      <div class="bannerRight">
+        <img src="../../../assets/sammitar.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <app-experience (dataEvent)="receiveData($event)"></app-experience>
+  <app-works (dataEvent)="receiveData($event)"></app-works>
+  <app-contact></app-contact>
+  <app-footer></app-footer>
+
+  <div class="loadingModal" *ngIf="dataBoolean">
+    <img src="../../../assets/loading.svg" alt="loading">
+  </div>
+
+</div>

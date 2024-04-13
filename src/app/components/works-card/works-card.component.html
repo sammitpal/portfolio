@@ -1,0 +1,17 @@
+<div class="worksCard">
+  <div class="worksCard_left">
+    <img src={{imgURL}} alt="" *ngIf="imgURL">
+  </div>
+  <div class="worksCard_right">
+    <div class="tags">
+      <p *ngFor="let tag of items">{{tag}}</p>
+    </div>
+    <div class="info">
+      <h1>{{title}}</h1>
+      <p>
+        {{description}}
+      </p>
+      <button>See Details</button>
+    </div>
+  </div>
+</div>

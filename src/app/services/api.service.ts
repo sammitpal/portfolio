@@ -12,83 +12,20 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  createSession() {
-    return this.http.get(this.BASE_URL + '/session/create', { responseType: 'text' });
-  }
+
 
   getProjects() {
-    if (!this.sessionToken) {
-      return this.createSession().pipe(
-        tap(sessionToken => {
-          this.sessionToken = sessionToken;
-          localStorage.setItem('sessionToken', sessionToken); // Store in localStorage
-        }),
-        switchMap(() => {
-          return this.http.get<any>(this.BASE_URL + '/projects/loadAllProjects', {
-            headers: {
-              'sessionToken': `${this.sessionToken}`
-            }
-          });
-        })
-      );
-    } else {
-      return this.http.get<any>(this.BASE_URL + '/projects/loadAllProjects', {
-        headers: {
-          'sessionToken': `${this.sessionToken}`
-        }
-      });
-    }
+    return this.http.get<any>(this.BASE_URL + '/projects/loadAllProjects');
   }
 
   getExperience() {
-    if (!this.sessionToken) {
-      return this.createSession().pipe(
-        tap(sessionToken => {
-          this.sessionToken = sessionToken;
-          localStorage.setItem('sessionToken', sessionToken); // Store in localStorage
-        }),
-        switchMap(() => {
-          return this.http.get<any>(this.BASE_URL + '/experience/getAllExperience', {
-            headers: {
-              'sessionToken': `${this.sessionToken}`
-            }
-          });
-        })
-      );
-    } else {
-      return this.http.get<any>(  this.BASE_URL + '/experience/getAllExperience', {
-        headers: {
-          'sessionToken': `${this.sessionToken}`
-        }
-      });
-    }
+    return this.http.get<any>(this.BASE_URL + '/experience/getAllExperience');
   }
 
   getResume(): Observable<Blob> {
-    if (!this.sessionToken) {
-      return this.createSession().pipe(
-        tap(sessionToken => {
-          this.sessionToken = sessionToken;
-          localStorage.setItem('sessionToken', sessionToken); // Store in localStorage
-        }),
-        switchMap(() => {
-          return this.http.get(this.BASE_URL + '/resume/view', {
-            responseType: 'blob',
-            headers: {
-              'sessionToken': `${this.sessionToken}`,
-              'Content-Type': 'application/pdf'
-            }
-          });
-        })
-      );
-    } else {
-      return this.http.get(this.BASE_URL + '/resume/view', {
-        responseType: 'blob',
-        headers: {
-          'sessionToken': `${this.sessionToken}`,
-          'Content-Type': 'application/pdf'
-        }
-      });
-    }
+
+    return this.http.get(this.BASE_URL + '/resume/view', {
+      responseType: 'blob',
+    });
   }
 }

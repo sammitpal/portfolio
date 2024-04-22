@@ -42,17 +42,6 @@ export class WorksComponent implements OnInit {
       this.loading = false; 
       this.sendData(); 
       console.log(err.status);
-
-      if (err.status == '401') {
-        this.reloadSession();
-      }
-    });
-  }
-
-  reloadSession() {
-    this.apiService.createSession().subscribe((data) => {
-      localStorage.removeItem('sessionToken');
-      localStorage.setItem('sessionToken', data);
     });
   }
 }

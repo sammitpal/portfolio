@@ -8,7 +8,6 @@ import { Observable, switchMap, tap } from 'rxjs';
 export class ApiService {
 
   private BASE_URL = 'https://api.sammit.online:8443/portfolio';
-  private sessionToken: string | null = localStorage.getItem('sessionToken'); // Retrieve from localStorage
 
   constructor(private http: HttpClient) { }
 

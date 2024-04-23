@@ -1,4 +1,6 @@
 <div class="homePage">
+
+  
   <app-navbar class="homeNavbar"></app-navbar>
   <div class="banner">
     <div class="bannerWrapper">
@@ -10,9 +12,10 @@
           web development, UI design for business needs.
         </p>
         <div class="buttonWrapper">
-          <button class="bannerButton buttonBlack">My Projects <img src="https://img.icons8.com/material-outlined/16/ffffff/right.png"/></button>
-          <button class="bannerButton" (click)="viewResume()">Resume <img src="https://img.icons8.com/material-outlined/16/000000/external-link.png"/></button>
+          <button pButton pRipple>My Projects <img src="https://img.icons8.com/material-outlined/16/ffffff/right.png"/></button>
+          <button pButton pRipple severity="secondary" class="p-button-secondary" (click)="viewResume()">Resume <img src="https://img.icons8.com/material-outlined/16/000000/external-link.png"/></button>
         </div>
+
       </div>
       <div class="bannerRight">
         <img src="../../../assets/sammitar.jpg" alt="">

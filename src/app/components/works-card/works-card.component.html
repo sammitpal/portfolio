@@ -4,7 +4,7 @@
   </div>
   <div class="worksCard_right">
     <div class="tags">
-      <p *ngFor="let tag of items">{{tag}}</p>
+      <p-chip [label]="tag" *ngFor="let tag of items"></p-chip>
     </div>
     <div class="info">
       <h1>{{title}}</h1>

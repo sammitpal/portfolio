@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, switchMap, tap } from 'rxjs';
+import { Message } from '../classes/message';
 
 @Injectable({
   providedIn: 'root'
@@ -27,4 +28,9 @@ export class ApiService {
       responseType: 'blob',
     });
   }
+
+  postMessage(message:Message){
+    return this.http.post(this.BASE_URL+'/publish',message)
+  }
+
 }

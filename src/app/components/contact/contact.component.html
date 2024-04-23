@@ -27,25 +27,21 @@
       <div class="contactForm">
         <div class="inputBar">
           <p>Full Name</p>
-          <input type="text" />
+          <input type="text" pInputText  [(ngModel)]="message.fName"/>
         </div>
         <div class="inputBar">
           <p>Email</p>
-          <input type="text" />
+          <input type="email" pInputText  [(ngModel)]="message.email"/>
         </div>
         <div class="inputBar">
           <p>Message</p>
-          <input type="text" />
+          <input type="text" pInputText [(ngModel)]="message.content"/>
         </div>
-        <!-- <div
-          class="g-recaptcha"
-          data-sitekey="6LfjNbgiAAAAANG-T4VhHqhzrMv_DdB9O8q1qpqD"
-          [(ngModel)]="recaptcha"
-        ></div> -->
-        <button (click)="submit()">
+        <button pButton pRipple (click)="submit()" label="Send Message" >
           <img
             src="https://img.icons8.com/ios-glyphs/26/ffffff/filled-sent.png"
-          />Send Message
+          />
+          
         </button>
       </div>
     </div>

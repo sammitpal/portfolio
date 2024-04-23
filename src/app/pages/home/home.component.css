@@ -1,5 +1,4 @@
 .homePage {
-  font-family: "Inter", sans-serif;
   height: 100%;
   min-height: 100vh;
   display: flex;
@@ -57,6 +56,9 @@
   align-items: center;
   justify-content: center;
 }
+button{
+  margin-right: 10px;
+}
 .bannerRight{
   z-index: -2;
 }
@@ -72,25 +74,7 @@
   display: flex;
   align-items: center;
 }
-button{
-  padding: 10px 15px;
-  border: none;
-  margin-right: 10px;
-  font-family: inherit;
-  font-size: 15px;
-  border-radius: 7px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-button > img{
-  margin-left: 10px;
-}
-.buttonBlack{
-  background: black;
-  color: white;
-}
+
 
 .loadingModal{
   position: fixed;

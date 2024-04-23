@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Message } from 'src/app/classes/message';
 import { Site } from 'src/app/classes/site';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,18 +10,20 @@ import { Site } from 'src/app/classes/site';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
-  recaptcha: any;
   siteData: Site = new Site();
-  constructor(private http: HttpClient) {}
+
+  message: Message = new Message();
+
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {}
 
-  resolved(captchaResponse: string) {
-    this.recaptcha = captchaResponse;
-  }
+ 
   submit() {
-    if (this.recaptcha.length > 0) {
-    }
+    console.log(this.message);
+    this.apiService.postMessage(this.message).subscribe((data:any)=>{
+      console.log(data);
+    })
   }
 
   redirect(url:any){

@@ -28,7 +28,13 @@
 .navbarRight > h3:hover {
   color: #0D9488;
 }
-
+.navbarRight > a:hover {
+  color: #0D9488;
+}
+a{
+  text-decoration: none;
+  color: #000000;
+}
 @media only screen and (max-width: 1122px) {
   .navbarWrapper {
     flex-direction: column;

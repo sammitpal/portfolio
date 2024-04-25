@@ -30,7 +30,7 @@ export class ApiService {
   }
 
   postMessage(message:Message){
-    return this.http.post(this.BASE_URL+'/publish',message)
+    return this.http.post(this.BASE_URL+'/message/publish',message)
   }
 
 }
